@@ -16,16 +16,32 @@ A high-fidelity, production-grade Retrieval-based Voice Conversion (RVC) model t
 
 ---
 
-## 🛠️ 2. Comprehensive Data Preprocessing Pipeline
+## 🎵 2. Source Dataset Discography
 
-To capture the emotional nuances, microtonal inflections, and breath dynamics characteristic of Arijit Singh's vocal delivery, the source data underwent a meticulous multi-stage Digital Signal Processing (DSP) pipeline before entering the model:
+To guarantee dynamic range, emotional depth, and stylistic versatility, the dataset was meticulously curated from nine premium studio masters. The final dataset yielded **208 pristine vocal chunks** isolated from the following tracks:
+
+* *Khamoshiyan*
+* *Baaton Ko Teri*
+* *Milne Hai Mujhse Aayi*
+* *Soch Na Sake*
+* *Khairiyat*
+* *Naina*
+* *Tum Hi Ho*
+* *Sanam Re*
+* *Daayre*
+
+---
+
+## 🛠️ 3. Comprehensive Data Preprocessing Pipeline
+
+To capture the emotional nuances, microtonal inflections, and breath dynamics characteristic of Arijit Singh's vocal delivery, the source tracks underwent a meticulous multi-stage Digital Signal Processing (DSP) pipeline before entering the model:
 
 ### Phase 1: Vocal Isolation & Demixing
-* **Dewatering/De-reverb:** Advanced phase-cancellation and deep-learning separation algorithms were deployed to isolate dry vocal stems from modern Bollywood orchestral arrangement mixdowns.
+* **Dewatering/De-reverb:** Advanced phase-cancellation and deep-learning separation algorithms were deployed to isolate dry vocal stems from the heavy, modern Bollywood orchestral arrangement mixdowns.
 * **Sibilance & Noise Attenuation:** High-pass filtering at 60 Hz eliminated sub-bass room rumble, followed by surgical dynamic equalization targeting harsh sibilance zones (4 kHz - 7 kHz) to protect the model from generating electronic lisp artifacts.
 
 ### Phase 2: Dynamic Slicing & Normalization
-* **Audio Chunk Segmentation:** A custom Python script sliced long vocal tracks into uniform segments based on silent breath thresholds. 
+* **Audio Chunk Segmentation:** A custom Python script sliced the long vocal tracks into uniform segments based on silent breath thresholds. 
   * *Minimum Slice Length:* 4.0 seconds
   * *Maximum Slice Length:* 12.0 seconds
   * *Silence Threshold:* -60 dB (ensuring zero mid-syllable truncation).
@@ -33,7 +49,7 @@ To capture the emotional nuances, microtonal inflections, and breath dynamics ch
 
 ---
 
-## 📈 3. End-to-End Training & Convergence Logs
+## 📈 4. End-to-End Training & Convergence Logs
 
 Training was executed locally using native hardware acceleration optimized for local memory layouts.
 
@@ -55,7 +71,7 @@ Multi-Epoch Training Loop ──> Forward/Backward Propagation ──> Target Lo
 
 ---
 
-## 🗂️ 4. Full Repository Architecture
+## 🗂️ 5. Full Repository Architecture
 
 This backup contains the raw history tree and runtime artifacts of the model's complete training evolution.
 
@@ -76,7 +92,7 @@ This backup contains the raw history tree and runtime artifacts of the model's c
 
 ---
 
-## 🎛️ 5. Production Inference Guidelines
+## 🎛️ 6. Production Inference Guidelines
 
 To reproduce a studio-grade representation that preserves complex vocal techniques, apply the following parameter stack inside your inference GUI or pipeline (e.g., Applio or custom script configurations):
 
